@@ -1,0 +1,89 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1>Sales Forecasting</h1>
+    <form action="/predict_sales" method="POST">
+        <label for="Item_Weight">Item Weight:</label>
+        <input type="number" id="Item_Weight" name="Item_Weight" required=""><br><br>
+
+        <label for="Item_Visibility">Item Visibility:</label>
+        <input type="number" id="Item_Visibility" name="Item_Visibility" required=""><br><br>
+
+        <label for="Item_MRP">Item MRP:</label>
+        <input type="number" id="Item_MRP" name="Item_MRP" required=""><br><br>
+       
+        <label for="Outlet_Type">Outlet Type:</label>
+        <select id="Outlet_Type" name="Outlet_Type" required="">
+            <option value="Supermarket Type1">Supermarket Type1</option>
+            <option value="Supermarket Type2">Supermarket Type2</option>
+            <option value="Supermarket Type3">Supermarket Type3</option>
+        </select><br><br>
+
+        <label for="Outlet_Location_Type">Outlet Type:</label>
+        <select id="Outlet_Location_Type" name="Outlet_Location_Type" required="">
+            <option value="Tier 2">Tier 2</option>
+            <option value="Tier 3">Tier 3</option>
+        </select><br><br>
+
+        <label for="Item_Fat_Content">Outlet Type:</label>
+        <select id="Item_Fat_Content" name="Item_Fat_Content" required="">
+            <option value="Low Fat">Low Fat</option>
+            <option value="Regular">Regular</option>
+            <option value="low fat">low fat</option>
+            <option value="reg">reg</option>
+        </select><br><br>
+
+        <label for="Item_Type">Outlet Type:</label>
+        <select id="Item_Type" name="Item_Type" required="">
+            <option value="Breads">Breads</option>
+            <option value="Breakfast">Breakfast</option>
+            <option value="Canned">Canned</option>
+            <option value="Dairy">Dairy</option>
+            <option value="Frozen Foods">Frozen Foods</option>
+            <option value="Fruits and Vegetables">Fruits and Vegetables</option>
+            <option value="Hard Drinks">Hard Drinks</option>
+            <option value="Health and Hygiene">Health and Hygiene</option>
+            <option value="Household">Household</option>
+            <option value="Meat">Meat</option>
+            <option value="Others">Others</option>
+            <option value="Seafood">Seafood</option>
+            <option value="Snack Foods">Snack Foods</option>
+            <option value="Soft Drinks">Soft Drinks</option>
+            <option value="Starchy Foods">Starchy Foods</option>
+        </select><br><br>
+        
+        <input type="submit" value="Predict Sales">
+    </form>
+
+<style>
+a[target="_blank"],
+area[target="_blank"],
+form[target="_blank"],
+button[formtarget="_blank"],
+input[formtarget="_blank"][type="image"],
+input[formtarget="_blank"][type="submit"] {
+  cursor: not-allowed !important;
+}
+a[target="_blank"]:hover::after,
+area[target="_blank"]:hover::after,
+form[target="_blank"]:hover::after,
+button[formtarget="_blank"]:hover::after,
+input[formtarget="_blank"][type="image"]:hover::after,
+input[formtarget="_blank"][type="submit"]:hover::after {
+  content: "Action disabled as the file is not trusted.";
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  border: 2px solid #e65100;
+  background-color: #ffb74d;
+  color: black;
+  font-family: system-ui, -apple-system, blinkmacsystemfont, 'Segoe UI', helvetica, arial, sans-serif;
+  text-align: center;
+}
+</style></body>

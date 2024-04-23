@@ -1,4 +1,4 @@
-from flask import Flask,request,jsonify
+from flask import Flask,request,jsonify,render_template
 import config 
 from project.utils import Sales_Prediction
 import numpy as np 
@@ -8,6 +8,11 @@ app = Flask(__name__)
 @app.route("/")
 def get_home():
     return "hello"
+
+@app.route("/html_page")
+def html():
+    return render_template("index.html")
+
 
 @app.route("/predict_sales",methods = ["POST","GET" ])
 def get_sales():
@@ -29,4 +34,4 @@ def get_sales():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host='0.0.0.0', port=config.PORT_NUMBER, debug=False)
