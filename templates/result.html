@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Prediction Result</title>
+    <style>
+        body {
+            background-image: url("https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F644db582-bcf0-4315-b401-117262a1652a%2F170627-better-grocery-store-main-se-539p-2053956.jpg?table=block&id=9ed393fa-4cd0-4bb7-ba59-89f9a150a289&cache=v2");
+            background-size: cover;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 100px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgb(10, 10, 10);
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Sales Prediction Result</h1>
+        <p><strong>Item Weight:</strong> {{ Item_Weight }}</p>
+        <p><strong>Item Visibility:</strong> {{ Item_Visibility }}</p>
+        <p><strong>Item MRP:</strong> {{ Item_MRP }}</p>
+        <p><strong>Outlet Type:</strong> {{ Outlet_Type }}</p>
+        <p><strong>Outlet Location Type:</strong> {{ Outlet_Location_Type }}</p>
+        <p><strong>Item Fat Content:</strong> {{ Item_Fat_Content }}</p>
+        <p><strong>Item Type:</strong> {{ Item_Type }}</p>
+        <h2>Predicted Sales: {{ predicted_sales }}</h2>
+    </div>
+
+</body>
+</html>

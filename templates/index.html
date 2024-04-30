@@ -1,43 +1,105 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Forecasting</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url("https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F644db582-bcf0-4315-b401-117262a1652a%2F170627-better-grocery-store-main-se-539p-2053956.jpg?table=block&id=9ed393fa-4cd0-4bb7-ba59-89f9a150a289&cache=v2");
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 80%;
+            margin: 100px auto;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
+
+<div class="container">
     <h1>Sales Forecasting</h1>
     <form action="/predict_sales" method="POST">
         <label for="Item_Weight">Item Weight:</label>
-        <input type="number" id="Item_Weight" name="Item_Weight" required=""><br><br>
+        <input type="number" id="Item_Weight" name="Item_Weight" required><br>
 
         <label for="Item_Visibility">Item Visibility:</label>
-        <input type="number" id="Item_Visibility" name="Item_Visibility" required=""><br><br>
+        <input type="number" id="Item_Visibility" name="Item_Visibility" required><br>
 
         <label for="Item_MRP">Item MRP:</label>
-        <input type="number" id="Item_MRP" name="Item_MRP" required=""><br><br>
+        <input type="number" id="Item_MRP" name="Item_MRP" required><br>
        
         <label for="Outlet_Type">Outlet Type:</label>
-        <select id="Outlet_Type" name="Outlet_Type" required="">
+        <select id="Outlet_Type" name="Outlet_Type" required>
             <option value="Supermarket Type1">Supermarket Type1</option>
             <option value="Supermarket Type2">Supermarket Type2</option>
             <option value="Supermarket Type3">Supermarket Type3</option>
-        </select><br><br>
+        </select><br>
 
-        <label for="Outlet_Location_Type">Outlet Type:</label>
-        <select id="Outlet_Location_Type" name="Outlet_Location_Type" required="">
+        <label for="Outlet_Location_Type">Outlet Location Type:</label>
+        <select id="Outlet_Location_Type" name="Outlet_Location_Type" required>
             <option value="Tier 2">Tier 2</option>
             <option value="Tier 3">Tier 3</option>
-        </select><br><br>
+        </select><br>
 
-        <label for="Item_Fat_Content">Outlet Type:</label>
-        <select id="Item_Fat_Content" name="Item_Fat_Content" required="">
+        <label for="Item_Fat_Content">Item Fat Content:</label>
+        <select id="Item_Fat_Content" name="Item_Fat_Content" required>
             <option value="Low Fat">Low Fat</option>
             <option value="Regular">Regular</option>
             <option value="low fat">low fat</option>
             <option value="reg">reg</option>
-        </select><br><br>
+        </select><br>
 
-        <label for="Item_Type">Outlet Type:</label>
-        <select id="Item_Type" name="Item_Type" required="">
+        <label for="Item_Type">Item Type:</label>
+        <select id="Item_Type" name="Item_Type" required>
             <option value="Breads">Breads</option>
             <option value="Breakfast">Breakfast</option>
             <option value="Canned">Canned</option>
@@ -53,37 +115,11 @@
             <option value="Snack Foods">Snack Foods</option>
             <option value="Soft Drinks">Soft Drinks</option>
             <option value="Starchy Foods">Starchy Foods</option>
-        </select><br><br>
+        </select><br>
         
         <input type="submit" value="Predict Sales">
     </form>
+</div>
 
-<style>
-a[target="_blank"],
-area[target="_blank"],
-form[target="_blank"],
-button[formtarget="_blank"],
-input[formtarget="_blank"][type="image"],
-input[formtarget="_blank"][type="submit"] {
-  cursor: not-allowed !important;
-}
-a[target="_blank"]:hover::after,
-area[target="_blank"]:hover::after,
-form[target="_blank"]:hover::after,
-button[formtarget="_blank"]:hover::after,
-input[formtarget="_blank"][type="image"]:hover::after,
-input[formtarget="_blank"][type="submit"]:hover::after {
-  content: "Action disabled as the file is not trusted.";
-  box-sizing: border-box;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  border: 2px solid #e65100;
-  background-color: #ffb74d;
-  color: black;
-  font-family: system-ui, -apple-system, blinkmacsystemfont, 'Segoe UI', helvetica, arial, sans-serif;
-  text-align: center;
-}
-</style></body>
+</body>
+</html>

@@ -1,0 +1,9 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdSUZ3ZyyS1VCmyUoPovyniPIUb1A1dogTKeEQ7NVEzg&s'); /* Replace 'background_image.jpg' with the path to your background image */
+    background-size: cover; /* Cover the entire viewport */
+    background-repeat: no-repeat; /* Do not repeat the background image */
+    background-position: center; /* Center the background image */
+}
