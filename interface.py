@@ -2,28 +2,28 @@ from flask import Flask,request,render_template
 import config 
 from project.utils import Sales_Prediction
 import numpy as np 
-from flask_sqlalchemy import SQLAlchemy
+# from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:Saurabh_335@localhost:3306/sales_prediction'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Saurabh_335@localhost:3306/sales_prediction'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Saurabh_335@localhost:3306/sales_prediction'
 
 
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-db = SQLAlchemy(app)
+# db = SQLAlchemy(app)
 
-class UserInput(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    item_weight = db.Column(db.Float)
-    item_visibility = db.Column(db.Float)
-    item_mrp = db.Column(db.Float)
-    outlet_type = db.Column(db.String(50))
-    outlet_location_type = db.Column(db.String(50))
-    item_fat_content = db.Column(db.String(50))
-    item_type = db.Column(db.String(50))
-    predicted_sales = db.Column(db.Float)
+# class UserInput(db.Model):
+#     id = db.Column(db.Integer, primary_key=True)
+#     item_weight = db.Column(db.Float)
+#     item_visibility = db.Column(db.Float)
+#     item_mrp = db.Column(db.Float)
+#     outlet_type = db.Column(db.String(50))
+#     outlet_location_type = db.Column(db.String(50))
+#     item_fat_content = db.Column(db.String(50))
+#     item_type = db.Column(db.String(50))
+#     predicted_sales = db.Column(db.Float)
 
 
 @app.route("/")
@@ -52,18 +52,18 @@ def get_sales():
         sales_obj = Sales_Prediction(Item_Weight,Item_Visibility,Item_MRP,Outlet_Type,Outlet_Location_Type,Item_Fat_Content,Item_Type)
         sales = sales_obj.Get_Sales()
 
-        user_input = UserInput(
-            item_weight=Item_Weight,
-            item_visibility=Item_Visibility,
-            item_mrp=Item_MRP,
-            outlet_type=Outlet_Type,
-            outlet_location_type=Outlet_Location_Type,
-            item_fat_content=Item_Fat_Content,
-            item_type=Item_Type,
-            predicted_sales=sales[0]  
-        )
-        db.session.add(user_input)
-        db.session.commit()
+        # user_input = UserInput(
+        #     item_weight=Item_Weight,
+        #     item_visibility=Item_Visibility,
+        #     item_mrp=Item_MRP,
+        #     outlet_type=Outlet_Type,
+        #     outlet_location_type=Outlet_Location_Type,
+        #     item_fat_content=Item_Fat_Content,
+        #     item_type=Item_Type,
+        #     predicted_sales=sales[0]  
+        # )
+        # db.session.add(user_input)
+        # db.session.commit()
 
         return render_template("result.html", 
                                Item_Weight=Item_Weight,
