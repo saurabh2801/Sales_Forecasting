@@ -41,9 +41,9 @@ def get_sales():
     if request.method == "POST":
         data = request.form
         print("User Input Data  ",data)
-        Item_Weight = eval(data["Item_Weight"])
-        Item_Visibility = eval(data["Item_Visibility"])
-        Item_MRP = eval(data["Item_MRP"])
+        Item_Weight = float(data["Item_Weight"])
+        Item_Visibility = float(data["Item_Visibility"])
+        Item_MRP = float(data["Item_MRP"])
         Outlet_Type = data["Outlet_Type"]
         Outlet_Location_Type = data["Outlet_Location_Type"]
         Item_Fat_Content = data["Item_Fat_Content"]
