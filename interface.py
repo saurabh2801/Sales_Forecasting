@@ -6,15 +6,14 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:Saurabh_335@localhost:3306/sales_prediction'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:Saurabh_335@localhost:3306/sales_prediction'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Saurabh_335@localhost:3306/sales_prediction'
 
-# Silence the deprecation warning
+
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-# Initialize SQLAlchemy
 db = SQLAlchemy(app)
 
-# Define your database model
 class UserInput(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     item_weight = db.Column(db.Float)
